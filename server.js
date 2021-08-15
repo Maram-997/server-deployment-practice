@@ -7,7 +7,7 @@ const app = express();
  const error500 = require('./handlers/500')
 
 app.get('/' , (req,res) => {
-    res.status(200).send(' HELLO WORLD!');
+    res.status(200).send('HELLO WORLD!');
 })
 
 app.get('/data', (req,res) => {

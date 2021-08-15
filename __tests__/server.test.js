@@ -10,7 +10,7 @@ it('It Should check the HELLO WORLD Works successfully ', async () =>{
     // arange
     let param = '/';
     let status = 200;
-    let text = 'HELLO WORLD';
+    let text = 'HELLO WORLD!';
     // act
     const response = await request.get(param);
     // assert 
@@ -25,18 +25,19 @@ it('It Should check the data', async () =>{
     const response = await request.get(param);
     // assert 
     expect(response.status).toBe(status);
-    expect(response.body).toEquel('object'); 
+    expect(typeof response.body).toEqual('object'); 
 });
 it('It Should check for 404 error ', async () =>{
      // arange
-     let param = '*';
+     let param = '/notfound';
      let status = 404;
      // act
      const response = await request.get(param);
      // assert 
      expect(response.status).toBe(status);
 });
-it(' It Should check for 500 error', async () =>{     // arange
+it('It Should check for 500 error', async () =>{     
+    // arange
     let param = '/badConnection';
     let status = 500;
     // act
